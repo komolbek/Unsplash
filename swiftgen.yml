@@ -1,0 +1,10 @@
+strings:
+  inputs: Resources/en.lproj/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: Resources/Strings.swift
+xcassets:
+  inputs: Resources/Assets.xcassets
+  outputs:
+    - templatePath: assets-template.stencil
+      output: Resources/Assets.swift

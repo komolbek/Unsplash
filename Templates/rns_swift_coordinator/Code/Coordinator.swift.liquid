@@ -1,0 +1,35 @@
+{% include 'header' %}
+
+import UIKit
+
+protocol {{ module_info.name }}CoordinatorOutput: CoordinatorOutput {}
+
+final class {{ module_info.name }}Coordinator: Coordinator<UINavigationController> {
+
+    typealias Dependencies = Any
+
+    private let dependencies: Dependencies
+
+    private weak var {{ module_info.name | downcase }}Output: {{ module_info.name }}CoordinatorOutput?
+    override weak var output: CoordinatorOutput? {
+        get {
+            return {{ module_info.name | downcase }}Output
+        }
+        set {
+            guard let {{ module_info.name | downcase }}Output = newValue as? {{ module_info.name }}CoordinatorOutput else {
+                fatalError("Incorrect output type")
+            }
+            self.{{ module_info.name | downcase }}Output = {{ module_info.name | downcase }}Output
+        }
+    }
+
+    // MARK: -  Lifecycle
+
+    init(rootViewController: UINavigationController? = nil, dependencies: Dependencies = [Any]()) {
+        self.dependencies = dependencies
+        super.init(rootViewController: rootViewController ?? UINavigationController())
+    }
+
+    override func start(animated: Bool) {
+    }
+}

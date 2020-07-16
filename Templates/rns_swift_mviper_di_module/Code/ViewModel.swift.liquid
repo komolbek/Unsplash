@@ -1,0 +1,17 @@
+{% include 'header' %}
+
+final class {{ module_info.name }}ViewModel {
+
+    init(state: {{ module_info.name }}State) {
+
+    }   
+}
+
+// MARK: -  Equatable
+
+extension {{ module_info.name }}ViewModel: Equatable {
+	
+	 static func == (lhs: {{ module_info.name }}ViewModel, rhs: {{ module_info.name }}ViewModel) -> Bool {
+        return false
+    }
+}

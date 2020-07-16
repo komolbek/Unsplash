@@ -1,0 +1,11 @@
+# Template information section
+name: "rns_swift_service"
+summary: "Service for DI container"
+author: "Dmitry Verennik"
+version: "1.0.1"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: ServiceProtocol.swift, path: Code/service_protocol.swift.liquid}
+- {name: Service.swift, path: Code/service.swift.liquid}
