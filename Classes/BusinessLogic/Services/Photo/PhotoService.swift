@@ -3,10 +3,11 @@
 
 final class PhotoService: NetworkService, PhotoServiceProtocol {
     
-    func fetchPhotos(success: @escaping ([FeedImage]?) -> Void,
+    func fetchPhotos(pageNumber: Int,
+                     success: @escaping ([FeedImage]?) -> Void,
                      failure: @escaping (Error) -> Void) {
+        let endpoint: PhotoEndpoint = .new(pageNumber: pageNumber)
         
-        let endpoint: PhotoEndpoint = .new
         request(endpoint: endpoint, success: { (response: [FeedImage]) in
             success(response)
         }, failure: { (error) in
@@ -15,8 +16,7 @@ final class PhotoService: NetworkService, PhotoServiceProtocol {
     }
     
     func fetchCategories(success: @escaping ([FeedCategory]?) -> Void,
-                          failure: @escaping (Error) -> Void) {
-        
+                         failure: @escaping (Error) -> Void) {
         let endpoint: PhotoEndpoint = .collections
         
         request(endpoint: endpoint, success: { (response: [FeedCategory]) in
@@ -30,7 +30,6 @@ final class PhotoService: NetworkService, PhotoServiceProtocol {
                               categoryID: Int?,
                               success: @escaping (CategoryDetails?) -> Void,
                               failure: @escaping (Error) -> Void) {
-        
         let endpoint: PhotoEndpoint = .categotyDetails(title: title, categoryID: categoryID)
         
         request(endpoint: endpoint, success: { (response: CategoryDetails) in

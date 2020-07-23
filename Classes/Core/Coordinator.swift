@@ -15,7 +15,7 @@ protocol CoordinatorOutput: class {
     func childCoordinatorDidClose(_ childCoordinator: CoordinatorProtocol)
 }
 
-class Coordinator<ViewController: UIViewController>: NSObject, CoordinatorProtocol, CoordinatorOutput {
+class Coordinator<ViewController: NavigationController>: NSObject, CoordinatorProtocol, CoordinatorOutput {
 
     let rootViewController: ViewController
     private(set) var childCoordinators: [CoordinatorProtocol] = []
@@ -27,11 +27,8 @@ class Coordinator<ViewController: UIViewController>: NSObject, CoordinatorProtoc
 
     init(rootViewController: ViewController) {
         self.rootViewController = rootViewController
-        if let navigationController = rootViewController as? UINavigationController {
-            self.initialViewControllers = WeakArray(navigationController.viewControllers)
-        } else {
-            self.initialViewControllers = WeakArray<UIViewController>()
-        }
+        self.initialViewControllers = WeakArray(rootViewController.viewControllers)
+
         super.init()
     }
 
@@ -51,8 +48,7 @@ class Coordinator<ViewController: UIViewController>: NSObject, CoordinatorProtoc
     private func reset(animated: Bool) {
         if isModal {
             presentationViewController?.dismiss(animated: animated, completion: nil)
-        } else if let navigationController = rootViewController as? UINavigationController {
-            navigationController.setViewControllers(initialViewControllers.strongified(), animated: animated)
+            rootViewController.setViewControllers(initialViewControllers.strongified(), animated: animated)
         }
     }
 

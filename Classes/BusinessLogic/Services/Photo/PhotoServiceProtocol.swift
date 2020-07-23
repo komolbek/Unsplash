@@ -8,7 +8,8 @@ protocol HasPhotoService {
 }
 
 protocol PhotoServiceProtocol: class {
-    func fetchPhotos(success: @escaping ([FeedImage]?) -> Void,
+    func fetchPhotos(pageNumber: Int,
+                     success: @escaping ([FeedImage]?) -> Void,
                      failure: @escaping (Error) -> Void)
     
     func fetchCategories(success: @escaping ([FeedCategory]?) -> Void,

@@ -6,6 +6,7 @@
 import Foundation
 
 struct Source: Codable {
+    
     let coverPhoto: CoverPhoto?
 
     enum CodingKeys: String, CodingKey {

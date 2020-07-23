@@ -5,7 +5,7 @@
 
 import Foundation
 
-enum SectionType: String, CaseIterable {
+enum FeedSectionType: String, CaseIterable {
 
     case explore, new
 

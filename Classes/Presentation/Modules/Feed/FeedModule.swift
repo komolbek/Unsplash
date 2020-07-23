@@ -12,7 +12,8 @@ protocol FeedModuleInput: class {
 
 protocol FeedModuleOutput: class {
     func feedModuleDidClose(_ moduleInput: FeedModuleInput)
-    func feedModuleIsRequestingCategoryDetailModule(with category: FeedCategory)
+    func feedModuleIsRequestingCategoryModule(with category: FeedCategory)
+    func feedModuleIsRequestingLoginModule()
 }
 
 final class FeedModule {

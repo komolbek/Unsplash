@@ -1,5 +1,4 @@
 import UIKit
-import Framezilla
 
 final class FeedExploreCell: UICollectionViewCell {
     
@@ -13,9 +12,7 @@ final class FeedExploreCell: UICollectionViewCell {
         collectionView.dataSource = self
         collectionView.backgroundColor = .black
         collectionView.showsVerticalScrollIndicator = false
-        
         collectionView.registerCellClass(FeedExploreCollectionCell.self)
-        
         return collectionView
     }()
     

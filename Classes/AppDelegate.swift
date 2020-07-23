@@ -20,14 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = appCoordinator.rootViewController
         window?.makeKeyAndVisible()
 
-        // пока только так. кастомный попробывал, не смог до конца понять, если что потом покажу
-        let image = UIImage.CategoryDetail.navLeftButtonImage
-        appCoordinator.rootViewController.navigationBar.backIndicatorImage = image
-        appCoordinator.rootViewController.navigationBar.backIndicatorTransitionMaskImage = image
-        appCoordinator.rootViewController.navigationBar.tintColor = .white
-        
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: 0, vertical: -40.0), for: .default)
-            
         appCoordinator.start(launchOptions: launchOptions)
 
         return true

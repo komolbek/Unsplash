@@ -25,11 +25,12 @@ final class FeedPresenter {
         self.update(animated: false)
         
         dispatchGroup.enter()
-        dependencies.photoService.fetchPhotos(success: { [weak self] images in
+        dependencies.photoService.fetchPhotos(pageNumber: state.imagePageCounter,
+                                              success: { [weak self] images in
             if let images = images, let self = self {
-                self.state.feedImages = images
+                self.state.feedImages.append(contentsOf: images)
+                self.state.imagePageCounter += 1
             }
-                                                
             dispatchGroup.leave()
         }) { error in
             print(error.localizedDescription)
@@ -41,9 +42,7 @@ final class FeedPresenter {
             if let categories = categories, let self = self {
                 self.state.feedCategories = categories
             }
-            
             dispatchGroup.leave()
-            
         }) { error in
             print(error.localizedDescription)
             dispatchGroup.leave()
@@ -52,6 +51,26 @@ final class FeedPresenter {
         dispatchGroup.notify(queue: .main) {
             self.state.isLoading = false
             self.update(animated: false)
+        }
+    }
+    
+    private func fetchNewData() {
+        state.isLoading = true
+        self.update(animated: false)
+        
+        dependencies.photoService.fetchPhotos(pageNumber: state.imagePageCounter,
+                                              success: { [weak self] images in
+            if let images = images, let self = self {
+                self.state.feedImages.append(contentsOf: images)
+                self.state.isLoading = false
+                self.state.imagePageCounter += 1
+                
+                DispatchQueue.main.async {
+                    self.update(animated: false)
+                }
+            }
+        }) { error in
+            print(error.localizedDescription)
         }
     }
 }
@@ -64,10 +83,21 @@ extension FeedPresenter: FeedViewOutput {
         dispatchData()
     }
     
-    func viewDidSelect(category with: IndexPath) {
-        if let category = self.state.feedCategories?[safe: with.row] {
-            output?.feedModuleIsRequestingCategoryDetailModule(with: category)
+    func viewNeedsNewPage() {
+        guard !state.isLoading else {
+            return
         }
+        fetchNewData()
+    }
+    
+    func viewDidSelect(categoryIn indexPath: IndexPath) {
+        if let category = self.state.feedCategories?[safe: indexPath.row] {
+            output?.feedModuleIsRequestingCategoryModule(with: category)
+        }
+    }
+    
+    func viewDidPressLoginButton() {
+        output?.feedModuleIsRequestingLoginModule()
     }
 }
 

@@ -8,10 +8,8 @@ import UIKit.UILabel
 extension UILabel {
     
     func setupAttributedText(using text: String?) {
-        let likeIcon = UIImage.MainFeed.likeLabelIcon
-        
         let textAttachment = NSTextAttachment()
-        textAttachment.image = likeIcon
+        textAttachment.image = Asset.MainFeedModule.likeIcon.image
         textAttachment.setHeight(of: 25)
         
         let attributedText = NSMutableAttributedString(string: text ?? "")

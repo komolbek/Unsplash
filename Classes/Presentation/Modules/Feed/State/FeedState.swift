@@ -5,4 +5,5 @@ final class FeedState {
     var feedCategories: [FeedCategory]?
     var feedImages: [FeedImage] = []
     var isLoading: Bool = false
+    var imagePageCounter: Int = 1
 }

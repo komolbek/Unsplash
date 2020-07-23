@@ -6,5 +6,6 @@
 import Foundation
 
 struct Tag: Codable {
+    
     let source: Source?
 }

@@ -19,4 +19,7 @@ extension UIFont {
     static var courierWithSize_18: UIFont? {
         return UIFont(name: "Courier", size: 18)
     }
+    static var courierWithBoldSize_18: UIFont? {
+        return UIFont(name: "Courier-Bold", size: 18)
+    }
 }

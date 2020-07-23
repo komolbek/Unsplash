@@ -1,5 +1,4 @@
 import UIKit
-import Framezilla
 
 final class FeedNewCell: UICollectionViewCell {
     
@@ -13,7 +12,6 @@ final class FeedNewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.courierWithSize_16
         label.textColor = .white
-        
         return label
     }()
     
@@ -21,14 +19,12 @@ final class FeedNewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
-        
         return imageView
     }()
     
     private(set) lazy var authorNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        
         return label
     }()
     
@@ -36,7 +32,6 @@ final class FeedNewCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.courierWithSize_14
-        
         return label
     }()
     

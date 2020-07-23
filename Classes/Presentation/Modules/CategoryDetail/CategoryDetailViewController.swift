@@ -16,6 +16,10 @@ protocol CategoryDetailViewOutput: class {
 }
 
 final class CategoryDetailViewController: UIViewController {
+    
+    private enum Constants {
+        static let valueOf_44: CGFloat = 44
+    }
 
     private(set) var viewModel: CategoryDetailViewModel
     let output: CategoryDetailViewOutput
@@ -31,9 +35,7 @@ final class CategoryDetailViewController: UIViewController {
         collectionView.backgroundColor = .black
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.registerCellClass(FeedNewCell.self)
-        
         return collectionView
     }()
     
@@ -42,7 +44,6 @@ final class CategoryDetailViewController: UIViewController {
         let subTitleText = viewModel.navigationSubTitle
         let navigationTitleView = NavitgationTitleView()
         navigationTitleView.set(titleText, and: subTitleText)
-        
         return navigationTitleView
     }()
     
@@ -50,7 +51,6 @@ final class CategoryDetailViewController: UIViewController {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .white
-        
         return activityIndicator
     }()
     
@@ -78,13 +78,6 @@ final class CategoryDetailViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-        navigationController?.navigationBar.barStyle = .black
-        
-        super.viewWillAppear(animated)
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -97,7 +90,7 @@ final class CategoryDetailViewController: UIViewController {
         }
         activityIndicatorView.configureFrame {
             $0.center()
-            $0.height(44).width(44)
+            $0.height(Constants.valueOf_44).width(Constants.valueOf_44)
         }
     }
 
@@ -124,11 +117,11 @@ extension CategoryDetailViewController: CategoryDetailViewInput, ViewUpdatable {
         self.viewModel = viewModel
         needsUpdate = false
         
-        update(new: viewModel, old: oldViewModel, keyPath: \.isLoading) { isLoading in
+        update(new: viewModel, old: oldViewModel, keyPath: \.isLoading) { _ in
             viewModel.isLoading ? activityIndicatorView.startAnimating() : activityIndicatorView.stopAnimating()
         }
         
-        update(new: viewModel, old: oldViewModel, keyPath: \.cellModels) { feedSectionModel in
+        update(new: viewModel, old: oldViewModel, keyPath: \.cellModels) { _ in
             collectionView.reloadData()
         }
 
@@ -176,7 +169,8 @@ extension CategoryDetailViewController: UICollectionViewDelegateFlowLayout {
         }
         
         let ratio: CGFloat = cellModel.height / cellModel.width
-        let resultSize: CGSize = .init(width: collectionView.bounds.width, height:collectionView.bounds.width * ratio)
+        let resultSize: CGSize = .init(width: collectionView.bounds.width,
+                                       height: collectionView.bounds.width * ratio)
         
         return resultSize
     }

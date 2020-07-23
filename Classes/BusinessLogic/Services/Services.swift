@@ -3,7 +3,7 @@
 //  Copyright © 2020 HiQo. All rights reserved.
 //
 
-typealias HasServices = HasPhotoService
+typealias HasServices = HasPhotoService & HasAuthService
 
 private typealias HasPersistentServices = Any
 
@@ -28,6 +28,10 @@ final class ServiceContainer: HasServices {
     
     var photoService: PhotoServiceProtocol {
         return PhotoService()
+    }
+    
+    var authService: AuthServiceProtocol {
+        return AuthService()
     }
     
     /// lazy var keychainService: KeychainServiceProtocol = {

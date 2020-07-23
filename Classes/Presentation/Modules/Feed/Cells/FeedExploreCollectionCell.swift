@@ -1,5 +1,4 @@
 import UIKit
-import Framezilla
 
 final class FeedExploreCollectionCell: UICollectionViewCell {
     
@@ -13,7 +12,6 @@ final class FeedExploreCollectionCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
-        
         return imageView
     }()
     
@@ -22,7 +20,6 @@ final class FeedExploreCollectionCell: UICollectionViewCell {
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.courierWithSize_18
-        
         return label
     }()
     

@@ -5,8 +5,8 @@
 
 import Foundation
 
-// MARK: - User
 struct User: Codable {
+    
     let name: String?
     let firstName: String?
   

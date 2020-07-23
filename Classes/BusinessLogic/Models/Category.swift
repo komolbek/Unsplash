@@ -4,6 +4,7 @@
 import Foundation
 
 struct FeedCategory: Codable {
+    
     let id: Int?
     let title: String?
     let tags: [Tag?]

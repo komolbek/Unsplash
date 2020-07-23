@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import Framezilla
 
 protocol FeedViewInput: class {
     @discardableResult
@@ -14,13 +13,15 @@ protocol FeedViewInput: class {
 
 protocol FeedViewOutput: class {
     func viewDidLoad()
-    func viewDidSelect(category with: IndexPath)
+    func viewDidSelect(categoryIn indexPath: IndexPath)
+    func viewNeedsNewPage()
+    func viewDidPressLoginButton()
 }
 
 final class FeedViewController: UIViewController {
     
     private enum Constant {
-        static let activityIndicatorSize: CGSize = CGSize(width: 44, height: 44)
+        static let valueOf_44: CGFloat = 44
     }
     
     private(set) var viewModel: FeedViewModel
@@ -37,13 +38,10 @@ final class FeedViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        
         collectionView.backgroundColor = .black
-        
         collectionView.registerHeaderViewClass(FeedCollectionHeaderView.self)
         collectionView.registerCellClass(FeedExploreCell.self)
         collectionView.registerCellClass(FeedNewCell.self)
-        
         return collectionView
     }()
     
@@ -51,7 +49,6 @@ final class FeedViewController: UIViewController {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.color = .white
-        
         return activityIndicator
     }()
     
@@ -71,16 +68,15 @@ final class FeedViewController: UIViewController {
         super.viewDidLoad()
         output.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Asset.MainFeedModule.loginIcon.image,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(handleLoginButton))
         view.addSubviews(collectionView, activityIndicatorView)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
     }
     
     override func viewDidLayoutSubviews() {
@@ -91,14 +87,19 @@ final class FeedViewController: UIViewController {
         }
         activityIndicatorView.configureFrame {
             $0.center()
-            $0.height(Constant.activityIndicatorSize.height).width(Constant.activityIndicatorSize.width)
+            $0.height(Constant.valueOf_44).width(Constant.valueOf_44)
         }
     }
     
     // MARK: -  Actions
+    
+    @objc private func handleLoginButton() {
+        output.viewDidPressLoginButton()
+    }
 }
 
 // MARK: -  FeedViewInput
+
 extension FeedViewController: FeedViewInput, ViewUpdatable {
     
     func setNeedsUpdate() {
@@ -116,11 +117,11 @@ extension FeedViewController: FeedViewInput, ViewUpdatable {
         self.viewModel = viewModel
         needsUpdate = false
         
-        update(new: viewModel, old: oldViewModel, keyPath: \.isLoading) { isLoading in
+        update(new: viewModel, old: oldViewModel, keyPath: \.isLoading) { _ in
             viewModel.isLoading ? activityIndicatorView.startAnimating() : activityIndicatorView.stopAnimating()
         }
         
-        update(new: viewModel, old: oldViewModel, keyPath: \.feedSectionModels) { feedSectionModel in
+        update(new: viewModel, old: oldViewModel, keyPath: \.feedSectionModels) { _ in
             collectionView.reloadData()
         }
         
@@ -171,11 +172,10 @@ extension FeedViewController: UICollectionViewDataSource {
             exploreCell.cellModelResolver = { [weak self] in
                 return self?.viewModel.feedSectionModels?[safe: indexPath.section]?.cellModels as? [FeedExploreCellModel] ?? []
             }
-            
             exploreCell.layoutSubviews()
             exploreCell.update()
             exploreCell.onSelect = { [weak self] internalIndex in
-                self?.output.viewDidSelect(category: internalIndex)
+                self?.output.viewDidSelect(categoryIn: internalIndex)
             }
             
             return exploreCell
@@ -188,7 +188,6 @@ extension FeedViewController: UICollectionViewDataSource {
         
         let cell: FeedNewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.authorNameLabel.text = cellModel.userName
-        
         cell.createdDateLabel.text = cellModel.date
         cell.setupLikesLabel(using: cellModel.likes)
         cell.layoutSubviews()
@@ -196,12 +195,6 @@ extension FeedViewController: UICollectionViewDataSource {
         
         return cell
     }
-}
-
-// MARK: -  UICollectionViewDelegate
-
-extension FeedViewController: UICollectionViewDelegate {
-    
 }
 
 // MARK: -  UICollectionViewDelegateFlowLayout
@@ -235,9 +228,25 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
             return .zero
         }
         
-        let ratio: CGFloat = cellModel.height / cellModel.width //?
-        let resultSize: CGSize = .init(width: collectionView.bounds.width, height:collectionView.bounds.width * ratio)
+        let ratio: CGFloat = cellModel.height / cellModel.width
+        let resultSize: CGSize = .init(width: collectionView.bounds.width,
+                                       height: collectionView.bounds.width * ratio)
         
         return resultSize
+    }
+}
+
+// MARK: -  UICollectionScrollView
+
+extension FeedViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let maxVerticalOffset = scrollView.contentSize.height - (scrollView.frame.height * 0.3)
+        let currentOffset = scrollView.contentOffset.y
+        let percentage = currentOffset/maxVerticalOffset * 100
+        
+        if percentage >= 60.0 {
+            output.viewNeedsNewPage()
+        }
     }
 }

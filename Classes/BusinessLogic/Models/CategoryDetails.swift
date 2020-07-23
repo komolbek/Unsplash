@@ -6,6 +6,7 @@
 import Foundation
 
 struct CategoryDetails: Codable {
+    
     let results: [FeedImage]?
     
     enum CodingKeys: String, CodingKey {

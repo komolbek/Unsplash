@@ -16,7 +16,6 @@ final class NavitgationTitleView: UIView {
         let label = UILabel()
         label.font = UIFont.courierWithSize_16
         label.textColor = .white
-        
         return label
     }()
     
@@ -24,7 +23,6 @@ final class NavitgationTitleView: UIView {
         let label = UILabel()
         label.font = UIFont.courierWithSize_12
         label.textColor = .gray
-        
         return label
     }()
     

@@ -1,6 +1,7 @@
 import Foundation
 
 struct FeedImage: Codable {
+    
     let createdAt: String?
     let width: Int?
     let height: Int?

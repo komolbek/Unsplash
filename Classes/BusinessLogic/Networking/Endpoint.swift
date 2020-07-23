@@ -7,11 +7,17 @@ import Foundation
 
 typealias Parameters = [String: Any]
 
+enum ParameterEncoding {
+    case urlEndoding, jsonEncoding
+}
+
 protocol Endpoint {
     var baseURL: URL { get }
     var path: String { get }
     var parameters: Parameters? { get }
     var method: HTTPMethod { get }
+    var headers: [String: Any] { get }
+    var parameterEncoding: ParameterEncoding { get }
 }
 
 extension Endpoint {

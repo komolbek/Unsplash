@@ -5,7 +5,7 @@
 
 import UIKit
 
-final class AppCoordinator: Coordinator<UINavigationController> {
+final class AppCoordinator: Coordinator<NavigationController> {
 
     typealias Dependencies = Any
 
@@ -13,8 +13,8 @@ final class AppCoordinator: Coordinator<UINavigationController> {
 
     // MARK: - Lifecycle
 
-    init(rootViewController: UINavigationController? = nil, dependencies: Dependencies = [Any]()) {
-        let rootViewController = rootViewController ?? UINavigationController()
+    init(rootViewController: NavigationController? = nil, dependencies: Dependencies = [Any]()) {
+        let rootViewController = rootViewController ?? NavigationController()
         self.dependencies = dependencies
         super.init(rootViewController: rootViewController)
     }
@@ -25,12 +25,20 @@ final class AppCoordinator: Coordinator<UINavigationController> {
         rootViewController.setViewControllers([module.viewController], animated: true)
     }
     
-    func pushCategoryDetailModule(with category: FeedCategory) {
+    private func pushCategoryDetailModule(with category: FeedCategory) {
         let categoryDetailState = CategoryDetailState(category: category)
         let module = CategoryDetailModule(with: categoryDetailState)
         rootViewController.pushViewController(module.viewController, animated: true)
     }
+    
+    private func presentLoginModule() {
+        let loginCoordinator: AuthentificationCoordinator = .init()
+        append(childCoordinator: loginCoordinator)
+        rootViewController.present(loginCoordinator.navRootViewController, animated: true, completion: nil)
+    }
 }
+
+//MARK: - FeedModuleOutput
 
 extension AppCoordinator: FeedModuleOutput {
     
@@ -38,7 +46,11 @@ extension AppCoordinator: FeedModuleOutput {
         
     }
     
-    func feedModuleIsRequestingCategoryDetailModule(with category: FeedCategory) {
+    func feedModuleIsRequestingCategoryModule(with category: FeedCategory) {
         pushCategoryDetailModule(with: category)
+    }
+    
+    func feedModuleIsRequestingLoginModule() {
+        presentLoginModule()
     }
 }

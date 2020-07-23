@@ -1,16 +1,17 @@
 //  Created by Kamolbek on 07/07/2020
 //  Copyright © 2020 HiQo. All rights reserved.
+
 import UIKit
 
 final class FeedViewModel {
     
-    let feedSectionModels: [FeedSectionModel]?
+    var feedSectionModels: [FeedSectionModel]?
     let isLoading: Bool
 
     init(state: FeedState) {
         self.isLoading = state.isLoading
         
-        self.feedSectionModels = SectionType.allCases.compactMap({ type -> FeedSectionModel? in
+        self.feedSectionModels = FeedSectionType.allCases.compactMap({ type -> FeedSectionModel? in
             
             let cellModels: [FeedCellModel]?
 

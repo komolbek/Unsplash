@@ -6,6 +6,7 @@
 import Foundation
 
 struct CoverPhoto: Codable {
+    
     let width: Int?
     let height: Int?
     let urls: PhotoUrl?

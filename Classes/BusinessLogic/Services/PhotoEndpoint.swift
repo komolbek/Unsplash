@@ -4,15 +4,13 @@
 import Foundation
 
 enum PhotoEndpoint {
-    case new, explore, collections
+    case new(pageNumber: Int)
+    case explore, collections
     case categotyDetails(title: String?, categoryID: Int?)
 }
 
-enum PathEndpoint {
-    case photos , collections
-}
-
 extension PhotoEndpoint: Endpoint {
+    
     var baseURL: URL {
         AppConfiguration.serverURL
     }
@@ -30,9 +28,11 @@ extension PhotoEndpoint: Endpoint {
     
     var parameters: Parameters? {
         switch self {
-        case .new:
+        case .new(let pageNumber):
             return ["client_id": AppConfiguration.apiKey,
-                    "query": "new"]
+                    "query": "new",
+                    "page": "\(pageNumber)",
+                    "per_page": "30"]
         case .explore:
             return ["client_id": AppConfiguration.apiKey,
                     "query": "explore"]
@@ -47,5 +47,13 @@ extension PhotoEndpoint: Endpoint {
     
     var method: HTTPMethod {
         .get
+    }
+
+    var headers: [String : Any] {
+        [:]
+    }
+
+    var parameterEncoding: ParameterEncoding {
+        return .urlEndoding
     }
 }

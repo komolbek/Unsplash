@@ -1,5 +1,4 @@
 import UIKit
-import Framezilla
 
 final class FeedCollectionHeaderView: UICollectionReusableView {
     
@@ -12,7 +11,6 @@ final class FeedCollectionHeaderView: UICollectionReusableView {
         label.textAlignment = .left
         label.font = UIFont.courierWithSize_18
         label.textColor = .white
-        
         return label
     }()
     
@@ -40,7 +38,6 @@ final class FeedCollectionHeaderView: UICollectionReusableView {
         var fittingSize: CGSize = .zero
         fittingSize.height += Constants.insets.top + Constants.insets.bottom
         fittingSize.height += titleLabel.sizeThatFits(size).height
-        
         return fittingSize
     }
 }

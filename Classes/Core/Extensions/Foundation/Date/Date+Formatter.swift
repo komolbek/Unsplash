@@ -8,12 +8,11 @@ import Foundation
 extension Date {
     
     func timeSinceDate(fromDate: Date) -> String {
-        
         let earliest = self < fromDate ? self  : fromDate
         let latest = (earliest == self) ? fromDate : self
-        let components:DateComponents = Calendar.current.dateComponents([.minute, .hour, .day,.weekOfYear, .month, .year, .second],
-                                                                        from: earliest,
-                                                                        to: latest)
+        let components: DateComponents = Calendar.current.dateComponents([.minute, .hour, .day,.weekOfYear, .month, .year, .second],
+                                                                         from: earliest,
+                                                                         to: latest)
         
         let year = components.year  ?? 0
         let month = components.month  ?? 0
