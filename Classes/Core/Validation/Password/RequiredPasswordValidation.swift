@@ -15,7 +15,7 @@ final class RequiredPasswordValidator {
     
     func validate(password: String?) throws {
         let passwordRegx = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$"
-        let passwordCheck = NSPredicate(format: "SELF MATCHES %@",passwordRegx)
+        let passwordCheck = NSPredicate(format: "SELF MATCHES %@", passwordRegx)
         
         if !passwordCheck.evaluate(with: password) {
             throw RequiredPasswordError(name: name)

@@ -3,4 +3,102 @@
    uuid = "57113C0C-BED5-4559-BADB-AF3BF18A7CB9"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE7DD2CB-2BC2-4DF4-B93B-9793E76C52B7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/BusinessLogic/Services/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "jsonEncodedRequest(endpoint:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE7DD2CB-2BC2-4DF4-B93B-9793E76C52B7 - 54ad9a403f379cb3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Unsplash.NetworkService.(jsonEncodedRequest in _8DB56D0A78456DC7E838BE5DDAE6460F)&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(endpoint: Unsplash.Endpoint, object: Swift.Optional&lt;Unsplash.RegistrationUser&gt;, success: (A) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Unsplash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ikomolbek/Desktop/unsplash1/unsplash/Classes/BusinessLogic/Services/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "1750">
+               </Location>
+               <Location
+                  uuid = "DE7DD2CB-2BC2-4DF4-B93B-9793E76C52B7 - 99cd54dbe5111a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Unsplash.NetworkService.(jsonEncodedRequest in _8DB56D0A78456DC7E838BE5DDAE6460F)&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(endpoint: Unsplash.Endpoint, object: Swift.Optional&lt;Unsplash.RegistrationUser&gt;, success: (A) -&gt; (), failure: (Swift.Error) -&gt; ()) -&gt; Swift.Optional&lt;__C.NSURLSessionDataTask&gt;"
+                  moduleName = "Unsplash"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ikomolbek/Desktop/unsplash1/unsplash/Classes/BusinessLogic/Services/NetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "164">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3367502-2E64-4E45-835D-45B1D259C980"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/BusinessLogic/Services/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "jsonEncodedRequest(endpoint:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02DAAE71-689B-42AE-B4DD-A18C8AC55FDF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/BusinessLogic/Services/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "jsonEncodedRequest(endpoint:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5385DDC-8CC1-49FB-AD54-2D4F50606AF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Classes/BusinessLogic/Services/NetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "jsonEncodedRequest(endpoint:success:failure:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

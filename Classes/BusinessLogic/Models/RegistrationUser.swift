@@ -12,4 +12,11 @@ struct RegistrationUser: Codable {
     var userName: String?
     var email: String?
     var password: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case userName = "username"
+        case email, password
+    }
 }
