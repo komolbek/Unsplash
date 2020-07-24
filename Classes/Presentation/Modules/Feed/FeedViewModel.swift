@@ -11,13 +11,13 @@ final class FeedViewModel {
     init(state: FeedState) {
         self.isLoading = state.isLoading
         
-        self.feedSectionModels = FeedSectionType.allCases.compactMap({ type -> FeedSectionModel? in
+        self.feedSectionModels = FeedSectionType.allCases.compactMap { type -> FeedSectionModel? in
             
             let cellModels: [FeedCellModel]?
 
             switch type {
             case .new:
-                cellModels = state.feedImages.compactMap({ image -> FeedNewCellModel? in
+                cellModels = state.feedImages.compactMap { image -> FeedNewCellModel? in
 
                     let firstName: String = image.user?.firstName ?? ""
                     let createdDate = String(describing:image.createdAt?.stringToDate()?.timeSinceDate(fromDate: Date.currentDate()) ?? "")
@@ -32,21 +32,21 @@ final class FeedViewModel {
                                             width: width,
                                             height: height,
                                             likes: likes)
-                })
+                }
 
             case .explore:
-                cellModels = state.feedCategories?.compactMap({ (collection) -> FeedExploreCellModel? in
+                cellModels = state.feedCategories?.compactMap { (collection) -> FeedExploreCellModel? in
                     
                     let title: String = collection.title ?? ""
                     let imageURL: URL? = URL(string: collection.coverPhoto?.urls?.regular ?? "")
 
                     return FeedExploreCellModel(title: title,
                                                 imageURL: imageURL)
-                })
+                }
             }
 
             return FeedSectionModel(title: type.title, cellModels: cellModels)
-        })
+        }
     }
 }
 

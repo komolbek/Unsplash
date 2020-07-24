@@ -49,7 +49,6 @@ final class FormTextField: UIView {
     
     private let errorLabel: UILabel = {
         let label: UILabel = UILabel()
-        
         label.textColor = .white
         label.textAlignment = .left
         label.font = UIFont.courierWithSize_12
@@ -124,9 +123,9 @@ final class FormTextField: UIView {
         errorLabel.textColor = color
         
         if text?.isEmpty ?? true {
-            setErrorState()
+//            setErrorState()
         } else {
-            setRegularState()
+//            setRegularState()
         }
     }
     

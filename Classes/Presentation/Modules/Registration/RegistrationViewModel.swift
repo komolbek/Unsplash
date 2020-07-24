@@ -10,7 +10,7 @@ final class RegistrationViewModel {
     let cellModels: [RegistrationCellModel]
     
     init(state: RegistrationState) {        
-        cellModels = RegistrationField.allCases.enumerated().compactMap({ (index, value) -> RegistrationCellModel? in
+        cellModels = RegistrationField.allCases.enumerated().compactMap { (index, value) -> RegistrationCellModel? in
             var error: String?
             var text: String?
             
@@ -25,7 +25,7 @@ final class RegistrationViewModel {
             return RegistrationCellModel(title: value.title,
                                          text: text,
                                          error: error ?? "")
-        })
+        }
     }
 }
 

@@ -17,7 +17,7 @@ final class CategoryDetailViewModel {
         self.navigationSubTitle = "Curated by \(state.category.user?.name ?? "")"
         self.isLoading = state.isLoading
         
-        self.cellModels = state.images?.compactMap({ (images) -> FeedNewCellModel in
+        self.cellModels = state.images?.compactMap { (images) -> FeedNewCellModel in
             
             let firstName: String = images.user?.firstName ?? ""
             let imageURL: URL? = URL(string: images.urls?.regular ?? "")
@@ -32,7 +32,7 @@ final class CategoryDetailViewModel {
                                     width: width,
                                     height: height,
                                     likes: likes)
-        })
+        }
     }
 }
 

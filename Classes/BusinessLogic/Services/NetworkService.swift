@@ -33,9 +33,9 @@ extension NetworkService {
                                                         success: @escaping Success<Result>,
                                                         failure: @escaping Failure) -> URLSessionDataTask? {
         let url = endpoint.url
-        let queryItems = endpoint.parameters?.compactMap({ (name, value) -> URLQueryItem? in
+        let queryItems = endpoint.parameters?.compactMap { (name, value) -> URLQueryItem? in
             return URLQueryItem(name: name, value: value as? String)
-        })
+        }
         var urlComponents = URLComponents(string: url.absoluteString)
         urlComponents?.queryItems = queryItems
         
