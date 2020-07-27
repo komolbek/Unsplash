@@ -1,0 +1,40 @@
+{% include 'header' %}
+
+import UIKit
+
+protocol {{ module_info.name }}ModuleInput: class {
+    var state: {{ module_info.name }}State { get }
+    func update(animated: Bool)
+}
+
+protocol {{ module_info.name }}ModuleOutput: class {
+    func {{ module_info.name | slice: 0, 1 | downcase }}{{ module_info.name | camelcase | slice: 1, module_info.name.size }}ModuleDidClose(_ moduleInput: {{ module_info.name }}ModuleInput)
+}
+
+final class {{ module_info.name }}Module {
+
+    var input: {{ module_info.name }}ModuleInput {
+        return presenter
+    }
+    weak var output: {{ module_info.name }}ModuleOutput? {
+        get {
+            return presenter.output
+        }
+        set {
+            presenter.output = newValue
+        }
+    }
+    let viewController: {{ module_info.name }}ViewController
+    private let presenter: {{ module_info.name }}Presenter
+
+    init() {
+        let state = {{ module_info.name }}State()
+        let viewModel = {{ module_info.name }}ViewModel(state: state)
+        let presenter = {{ module_info.name }}Presenter(state: state, dependencies: ServiceContainer())
+        let viewController = {{ module_info.name }}ViewController(viewModel: viewModel, output: presenter)
+        
+        presenter.view = viewController
+        self.viewController = viewController
+        self.presenter = presenter
+    }
+}
