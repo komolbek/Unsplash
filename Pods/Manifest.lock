@@ -1,0 +1,24 @@
+PODS:
+  - Framezilla (2.9.1)
+  - Nuke (7.5.2)
+  - SwiftGen (6.2.1)
+
+DEPENDENCIES:
+  - Framezilla
+  - Nuke (~> 7.0)
+  - SwiftGen (~> 6.0)
+
+SPEC REPOS:
+  trunk:
+    - Framezilla
+    - Nuke
+    - SwiftGen
+
+SPEC CHECKSUMS:
+  Framezilla: 47d52b1986bddf580da55ba77189ef654ebdc731
+  Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
+  SwiftGen: 62e69d127507be1538d4263e137b2290cd6ab272
+
+PODFILE CHECKSUM: 835d74e4128d9e708538e69f5aacd18586c25dda
+
+COCOAPODS: 1.9.1

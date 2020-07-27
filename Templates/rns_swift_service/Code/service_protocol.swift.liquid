@@ -1,0 +1,9 @@
+{% include 'header' %}
+
+protocol Has{{ module_info.name }}Service {
+    var {{ module_info.name | slice: 0, 1 | downcase }}{{ module_info.name | camelcase | slice: 1, module_info.name.size }}Service: {{ module_info.name }}ServiceProtocol { get }
+}
+
+protocol {{ module_info.name }}ServiceProtocol: class {
+
+}

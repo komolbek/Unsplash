@@ -1,0 +1,10 @@
+# Template information section
+name: "rns_swift_coordinator"
+summary: "Coordinator"
+author: "Dmitry Verennik"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: Coordinator.swift, path: Code/Coordinator.swift.liquid}

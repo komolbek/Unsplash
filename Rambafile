@@ -1,0 +1,30 @@
+### Headers settings
+company: HiQo
+
+### Xcode project settings
+project_name: Unsplash
+xcodeproj_path: Unsplash.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Unsplash
+
+# The file path for new modules
+project_file_path: Classes/
+
+# The xcodeproj group path to new modules
+project_group_path: Classes/
+
+### Dependencies settings section
+
+cartfile_path: Cartfile
+
+### Templates
+catalogs:
+
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}
+
+
