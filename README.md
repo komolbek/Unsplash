@@ -11,7 +11,7 @@
 
 
 ## Screenshots
-<img src="https://user-images.githubusercontent.com/55618255/92268033-939bda00-eed9-11ea-85c1-e52d823376d8.png" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92267905-5fc0b480-eed9-11ea-9d6b-1fcc7a66b5f7.png" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92267813-31db7000-eed9-11ea-92e2-8c3a42a4e032.png" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92267764-196b5580-eed9-11ea-9b73-fbd66ea67386.png" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92267752-140e0b00-eed9-11ea-842e-1929e37e99cb.png" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92268276-fee5ac00-eed9-11ea-8652-a9365004abdf.png" width="200">
+<img src="https://user-images.githubusercontent.com/55618255/92270327-c5af3b00-eedd-11ea-89bf-15f737273b54.jpg" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92270338-ca73ef00-eedd-11ea-9327-aba4d6ee30c7.jpg" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92270343-cba51c00-eedd-11ea-9786-7b1505ac4926.jpg" width="200"> <img src="https://user-images.githubusercontent.com/55618255/92270344-cc3db280-eedd-11ea-8e9c-4850288187c9.jpg" width="200"> 
 
 
 ## Technologies
@@ -25,13 +25,13 @@
 * Paradigms: OOP
 * Multithreading: GCD
 * Architecture: Clean Swift + Coordinator
-* Other: Custom classes, Depency Injection, Generics
+* Other: Custom classes, Depency Injection, Generics, Pagination
 
 ## Setup
 To run this project, install it locally using git:
-
-$ git clone https://github.com/vladmusuz/Kittygram
-
+```
+$ git clone https://github.com/vladmusuz/Unsplash.git
+```
 ## To-do list:
 * Need to refactor/style
 * Fix post request
