@@ -1,5 +1,5 @@
 # Unsplash
-> Clean, fast and cozy application for looking/uploading images(need to fix post request). Developed in learning purposes.
+> Clean, fast and cozy application for looking/uploading images(need to fix post request). 
 
 ## Table of contents
 * [Screenshots](#screenshots)
