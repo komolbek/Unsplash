@@ -19,12 +19,12 @@
 		36BFA74D1E09CA0FD5073A10 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBA43524110A16EA9CB914 /* CategoryDetailViewController.swift */; };
 		3AB40F5F86FCD59F55DE5A77 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E7668999BE5D3404D24CBA /* PhotoService.swift */; };
 		40F1C9C5226F5AD44B3512E7 /* FeedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B062BA6B06079FBC77326FDB /* FeedModule.swift */; };
-		4C1C947C257EAFD60006F5E5 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C947B257EAFD60006F5E5 /* LoginModule.swift */; };
-		4C1C947E257EAFF20006F5E5 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C947D257EAFF20006F5E5 /* LoginState.swift */; };
-		4C1C9480257EB0140006F5E5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C947F257EB0140006F5E5 /* LoginViewModel.swift */; };
-		4C1C9482257EB01F0006F5E5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9481257EB01F0006F5E5 /* LoginPresenter.swift */; };
-		4C1C9484257EB02A0006F5E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9483257EB02A0006F5E5 /* LoginViewController.swift */; };
-		4C1C9486257EB0840006F5E5 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9485257EB0840006F5E5 /* RegistrationState.swift */; };
+		4C1C949A257EB3BE0006F5E5 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9496257EB3BE0006F5E5 /* LoginPresenter.swift */; };
+		4C1C949B257EB3BE0006F5E5 /* LoginModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9497257EB3BE0006F5E5 /* LoginModule.swift */; };
+		4C1C949C257EB3BE0006F5E5 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9498257EB3BE0006F5E5 /* LoginViewModel.swift */; };
+		4C1C949D257EB3BE0006F5E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C9499257EB3BE0006F5E5 /* LoginViewController.swift */; };
+		4C1C949F257EB3C40006F5E5 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C949E257EB3C40006F5E5 /* LoginState.swift */; };
+		4C1C94A1257EB3D00006F5E5 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C94A0257EB3D00006F5E5 /* RegistrationState.swift */; };
 		6D35B59A216B647100C72B29 /* Bundle+Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D35B599216B646F00C72B29 /* Bundle+Info.swift */; };
 		6D3A04222170BE06007B6860 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A04212170BE03007B6860 /* AppConfiguration.swift */; };
 		6D6D7E9921F73C90000FFA4D /* ViewUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D7E9821F73C90000FFA4D /* ViewUpdatable.swift */; };
@@ -118,12 +118,12 @@
 		44D3E6EF8EF14CC520B51DA4 /* RegistrationModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModule.swift; sourceTree = "<group>"; };
 		45C039C39FDC833138C5ED23 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		49C39138CA490DDBD3E7BCF0 /* CategoryDetailModule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryDetailModule.swift; sourceTree = "<group>"; };
-		4C1C947B257EAFD60006F5E5 /* LoginModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginModule.swift; path = ../../../../../../LoginModule.swift; sourceTree = "<group>"; };
-		4C1C947D257EAFF20006F5E5 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginState.swift; path = ../../../../../../../LoginState.swift; sourceTree = "<group>"; };
-		4C1C947F257EB0140006F5E5 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = ../../../../../../LoginViewModel.swift; sourceTree = "<group>"; };
-		4C1C9481257EB01F0006F5E5 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = ../../../../../../LoginPresenter.swift; sourceTree = "<group>"; };
-		4C1C9483257EB02A0006F5E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../../../LoginViewController.swift; sourceTree = "<group>"; };
-		4C1C9485257EB0840006F5E5 /* RegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationState.swift; path = ../../../../../../../RegistrationState.swift; sourceTree = "<group>"; };
+		4C1C9496257EB3BE0006F5E5 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPresenter.swift; path = Classes/Presentation/Modules/Login/LoginPresenter.swift; sourceTree = SOURCE_ROOT; };
+		4C1C9497257EB3BE0006F5E5 /* LoginModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginModule.swift; path = Classes/Presentation/Modules/Login/LoginModule.swift; sourceTree = SOURCE_ROOT; };
+		4C1C9498257EB3BE0006F5E5 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = Classes/Presentation/Modules/Login/LoginViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4C1C9499257EB3BE0006F5E5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Classes/Presentation/Modules/Login/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		4C1C949E257EB3C40006F5E5 /* LoginState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginState.swift; path = Classes/Presentation/Modules/Login/State/LoginState.swift; sourceTree = SOURCE_ROOT; };
+		4C1C94A0257EB3D00006F5E5 /* RegistrationState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistrationState.swift; path = Classes/Presentation/Modules/Registration/State/RegistrationState.swift; sourceTree = SOURCE_ROOT; };
 		526D6796769B1908D0C07248 /* Pods-Unsplash.adhoc development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unsplash.adhoc development.xcconfig"; path = "Target Support Files/Pods-Unsplash/Pods-Unsplash.adhoc development.xcconfig"; sourceTree = "<group>"; };
 		68C3423269C86F9671F27738 /* Pods_Unsplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unsplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D35B599216B646F00C72B29 /* Bundle+Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Info.swift"; sourceTree = "<group>"; };
@@ -550,10 +550,10 @@
 		EBC418B124C996CF007E20AF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				4C1C947B257EAFD60006F5E5 /* LoginModule.swift */,
-				4C1C9481257EB01F0006F5E5 /* LoginPresenter.swift */,
-				4C1C9483257EB02A0006F5E5 /* LoginViewController.swift */,
-				4C1C947F257EB0140006F5E5 /* LoginViewModel.swift */,
+				4C1C9497257EB3BE0006F5E5 /* LoginModule.swift */,
+				4C1C9496257EB3BE0006F5E5 /* LoginPresenter.swift */,
+				4C1C9499257EB3BE0006F5E5 /* LoginViewController.swift */,
+				4C1C9498257EB3BE0006F5E5 /* LoginViewModel.swift */,
 				EBC418BC24C99703007E20AF /* State */,
 			);
 			name = Login;
@@ -563,7 +563,7 @@
 		EBC418BC24C99703007E20AF /* State */ = {
 			isa = PBXGroup;
 			children = (
-				4C1C947D257EAFF20006F5E5 /* LoginState.swift */,
+				4C1C949E257EB3C40006F5E5 /* LoginState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -571,7 +571,7 @@
 		EBC418BE24C999DB007E20AF /* State */ = {
 			isa = PBXGroup;
 			children = (
-				4C1C9485257EB0840006F5E5 /* RegistrationState.swift */,
+				4C1C94A0257EB3D00006F5E5 /* RegistrationState.swift */,
 			);
 			name = State;
 			path = ../State;
@@ -839,6 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1C949D257EB3BE0006F5E5 /* LoginViewController.swift in Sources */,
 				EB8625CB24BE92DD00ECCAAB /* UIColor+RGB.swift in Sources */,
 				0679BEDF205A4DEC0058E8F3 /* Strings.swift in Sources */,
 				C3D08F4F2101B9B600FDC15E /* Assets.swift in Sources */,
@@ -851,9 +852,8 @@
 				EB3C43F924B4E36400AA0FEA /* FeedNewCellModel.swift in Sources */,
 				EB58A90A24BC6E530092B3A1 /* UILabel+Attributed.swift in Sources */,
 				EBDFC7B124C7074C001252E2 /* RegistrationField.swift in Sources */,
+				4C1C949A257EB3BE0006F5E5 /* LoginPresenter.swift in Sources */,
 				EBD60DAA24BF8E6D00C4DE30 /* FeedSectionType.swift in Sources */,
-				4C1C9484257EB02A0006F5E5 /* LoginViewController.swift in Sources */,
-				4C1C947C257EAFD60006F5E5 /* LoginModule.swift in Sources */,
 				EB58A90F24BDA1280092B3A1 /* CategoryDetails.swift in Sources */,
 				EB3C43D824B4B88100AA0FEA /* FeedImage.swift in Sources */,
 				EBC418C624C99A22007E20AF /* RequiredEmailError.swift in Sources */,
@@ -864,7 +864,7 @@
 				EBFB153324B6031A00EC9C4F /* NetworkService.swift in Sources */,
 				EBC418AC24C995DD007E20AF /* AuthentificationCoordinator.swift in Sources */,
 				EB3C43E824B4BDC200AA0FEA /* FeedExploreCell.swift in Sources */,
-				4C1C947E257EAFF20006F5E5 /* LoginState.swift in Sources */,
+				4C1C949F257EB3C40006F5E5 /* LoginState.swift in Sources */,
 				EBC6894B24BB18B800E4C9F0 /* UIImageView+Nuke.swift in Sources */,
 				EB3C440224B4EE5400AA0FEA /* UICollectionView+Sugar.swift in Sources */,
 				EB3C43EA24B4BDCB00AA0FEA /* FeedExploreCollectionCell.swift in Sources */,
@@ -873,14 +873,15 @@
 				6D6D7EA221F743FA000FFA4D /* Services.swift in Sources */,
 				EB8625C924BE928D00ECCAAB /* Gradient.swift in Sources */,
 				EB58A90824BC6D5C0092B3A1 /* Date+Formatter.swift in Sources */,
-				4C1C9480257EB0140006F5E5 /* LoginViewModel.swift in Sources */,
 				EBC418C224C99A00007E20AF /* RequiredPasswordError.swift in Sources */,
+				4C1C949C257EB3BE0006F5E5 /* LoginViewModel.swift in Sources */,
 				EB3C43E624B4BDAD00AA0FEA /* FeedNewCell.swift in Sources */,
 				6D35B59A216B647100C72B29 /* Bundle+Info.swift in Sources */,
 				EBC418AE24C99662007E20AF /* AuthServiceProtocol.swift in Sources */,
 				EBFB152D24B5E45E00EC9C4F /* PhotoUrl.swift in Sources */,
 				060F086D1E4D6C9200D9166F /* AppDelegate.swift in Sources */,
 				06E0EBD11FAC0BB4002715AE /* AppConfigurator.swift in Sources */,
+				4C1C949B257EB3BE0006F5E5 /* LoginModule.swift in Sources */,
 				EBFB153924B629BA00EC9C4F /* Endpoint.swift in Sources */,
 				EB58A91624BDB1210092B3A1 /* NavigationTitleView.swift in Sources */,
 				EB453E0224B87D2D009A8548 /* Tag.swift in Sources */,
@@ -896,8 +897,8 @@
 				EBD60DB024C0991400C4DE30 /* Button.swift in Sources */,
 				7019E59AC70EE6DCD7919F72 /* FeedViewController.swift in Sources */,
 				EB8625C124BE3FC100ECCAAB /* UIFont+Sugar.swift in Sources */,
+				4C1C94A1257EB3D00006F5E5 /* RegistrationState.swift in Sources */,
 				EB3C43F524B4DC7100AA0FEA /* UIView+Sugar.swift in Sources */,
-				4C1C9486257EB0840006F5E5 /* RegistrationState.swift in Sources */,
 				FC965D68B9DA7D25FF7DFD85 /* FeedViewModel.swift in Sources */,
 				EB3C43F724B4E22900AA0FEA /* FeedExploreCellModel.swift in Sources */,
 				EBC6894724BB184900E4C9F0 /* DecodingError.swift in Sources */,
@@ -912,7 +913,6 @@
 				3AB40F5F86FCD59F55DE5A77 /* PhotoService.swift in Sources */,
 				8A31593009683B189E8B8406 /* CategoryDetailModule.swift in Sources */,
 				EBC418CA24C99A66007E20AF /* AuthEndpoint.swift in Sources */,
-				4C1C9482257EB01F0006F5E5 /* LoginPresenter.swift in Sources */,
 				36BFA74D1E09CA0FD5073A10 /* CategoryDetailViewController.swift in Sources */,
 				EBC418B024C9966A007E20AF /* AuthService.swift in Sources */,
 				8D7B534806A06F5DB54E04F2 /* CategoryDetailViewModel.swift in Sources */,
